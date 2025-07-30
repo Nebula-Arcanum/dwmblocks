@@ -1,0 +1,36 @@
+#!/bin/sh
+
+date=$(date '+%a, %d/%m/%y')
+time=$(date '+%H:%M:%S')
+
+hour=$(date '+%H')
+
+case 1 in
+	$((hour = 0)) ) icon="󱑖" ;;
+	$((hour = 1)) ) icon="󱑋" ;;
+	$((hour = 2)) ) icon="󱑌" ;;
+	$((hour = 3)) ) icon="󱑍" ;;
+	$((hour = 4)) ) icon="󱑎" ;;
+	$((hour = 5)) ) icon="󱑏" ;;
+	$((hour = 6)) ) icon="󱑐" ;;
+	$((hour = 7)) ) icon="󱑑" ;;
+	$((hour = 8)) ) icon="󱑒" ;;
+	$((hour = 9)) ) icon="󱑓" ;;
+	$((hour = 10)) ) icon="󱑔" ;;
+	$((hour = 11)) ) icon="󱑕" ;;
+	$((hour = 12)) ) icon="󱑖" ;;
+	$((hour = 13)) ) icon="󱑋" ;;
+	$((hour = 14)) ) icon="󱑌" ;;
+	$((hour = 15)) ) icon="󱑍" ;;
+	$((hour = 16)) ) icon="󱑎" ;;
+	$((hour = 17)) ) icon="󱑏" ;;
+	$((hour = 18)) ) icon="󱑐" ;;
+	$((hour = 19)) ) icon="󱑑" ;;
+	$((hour = 20)) ) icon="󱑒" ;;
+	$((hour = 21)) ) icon="󱑓" ;;
+	$((hour = 22)) ) icon="󱑔" ;;
+	$((hour = 23)) ) icon="󱑕" ;;
+	* ) echo 🔇 && exit ;;
+esac
+
+echo "$date, $icon$time"

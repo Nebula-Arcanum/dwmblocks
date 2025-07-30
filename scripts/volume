@@ -1,0 +1,19 @@
+#!/bin/sh
+
+vol=$(mixer vol | grep volume | awk -F ':' '{ printf "%.0f\n", $2 * 100 }')
+
+mute=$(mixer vol | grep mute | awk -F '=' '{ printf $2}')
+
+case 1 in
+	$((vol >= 60)) ) icon="󰕾" ;;
+	$((vol >= 0)) ) icon="󰖀" ;;
+	* ) echo 🔇 && exit ;;
+esac
+
+if [ "$mute" = "on" ]
+then
+	echo "󰝟"
+else
+	echo "$icon$vol%"
+fi
+
